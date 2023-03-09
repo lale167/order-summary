@@ -1,0 +1,194 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+    height: 100vh;
+    background-color: var(--pale-blue);
+    background-image: url("assets/images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 100% 50%;
+}
+
+img {
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+button {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    height: 3.125rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 325px;
+    height: 575px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("assets/images/illustration-hero.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    padding: 1.5rem;
+    padding-top: 12rem;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 10px hsla(224, 23%, 55%, 0.2);
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-pale-blue);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 1.45rem;
+    color: var(--dark-blue);
+}
+
+.p {
+    color: var(--desaturated-blue);
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.annual-plan-container {
+    text-align: left;
+    margin-right: 18px;
+}
+
+.annual-plan {
+    font-weight: 900;
+    color: var(--dark-blue);
+    font-size: 15px;
+}
+
+.price {
+    color: var(--desaturated-blue);
+    font-size: 15px;
+}
+
+.change {
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: 0.1s ease-out;
+}
+
+.change:hover {
+    text-decoration: none;
+    color: hsla(245, 75%, 52%, 0.7);
+}
+
+.pay {
+    box-shadow: 0 10px 10px hsla(224, 23%, 55%, 0.2);
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+
+.pay:hover {
+    background-color: hsla(245, 75%, 52%, 0.7);
+}
+
+.cancel {
+    background-color: inherit;
+    color: var(--desaturated-blue);
+}
+
+.cancel p {
+    cursor: pointer;
+    transition: 0.1s ease-out;
+}
+
+.cancel p:hover {
+    color: var(--dark-blue);
+}
+
+/* FOOTER */
+.transparent {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* MEDIA */
+
+@media (min-width: 450px) {
+    body {
+        background-image: url(assets/images/pattern-background-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: 100% 50%;
+    }
+
+    .container {
+        max-width: 450px;
+        height: 700px;
+        padding: 3rem;
+        padding-top: 16.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .annual-plan-container {
+        padding: 0.75rem;
+    }
+
+    .annual-plan {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        margin-right: 4rem;
+    }
+}
